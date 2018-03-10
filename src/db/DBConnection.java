@@ -94,5 +94,6 @@ public interface DBConnection {
 	 * @param userId
 	 * @return boolean
 	 */
-	public boolean addUser(String userId, String password);	
+	public boolean addUser(String userId, String password);
+	
 }

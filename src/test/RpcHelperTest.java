@@ -1,4 +1,4 @@
-package rpc;
+package test;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,6 +12,7 @@ import org.skyscreamer.jsonassert.JSONAssert;
 
 import entity.Event;
 import entity.Event.EventBuilder;
+import rpc.RpcHelper;
 
 public class RpcHelperTest {
 
