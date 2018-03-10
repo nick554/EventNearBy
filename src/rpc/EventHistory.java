@@ -40,12 +40,11 @@ public class EventHistory extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// allow access only if session exists
-		HttpSession session = request.getSession(false);
-		if (session == null) {
-			response.setStatus(403);
+		String userId = null;
+		if ( ( userId = request.getParameter("user_id")) == null) {
+			response.setStatus(444);
 			return;
 		}
-		String userId = session.getAttribute("user_id").toString();
 		
 		JSONArray array = new JSONArray();
 
@@ -61,6 +60,7 @@ public class EventHistory extends HttpServlet {
 			array.put(obj);
 		}
 		RpcHelper.writeJSONArray(response, array);
+		conn.close();
 	}
 
 	/**
